@@ -4,6 +4,9 @@ BUILD=build
 JAVAC=javac
 JAVA=java
 JAR=jar
+BACH=bach
+
+# class files generated from src/Driver.java
 GEN=${BUILD}/Driver.class ${BUILD}/Pair.class ${BUILD}/Vector.class ${BUILD}/Wheel.class ${BUILD}/Wheels.class
 
 all: ${GEN} bach/index.html
@@ -16,7 +19,7 @@ ${GEN}: src/Driver.java
 #	${JAR} cf ${BUILD}/Driver.jar ${BUILD}/Driver.class
 
 bach/index.html: ${GEN}
-	bach
+		${BACH}
 
 run: ${GEN}
 	./run.sh

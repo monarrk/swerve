@@ -3,4 +3,4 @@ yeah
 
 this Makefile is for BSD but it should probably hopefully work with GNU compatible make as well.
 
-building this will also generate some documentation in `bach/` through the usage of [Bach](https://github.com/SalineSingularityFRC/bach).
+building this will also generate some documentation in `bach/` through the usage of [Bach](https://github.com/SalineSingularityFRC/bach). If you want to disable this, just change the `BACH` variable to `""`
