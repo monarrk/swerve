@@ -20,6 +20,8 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
+package Driver;
+
 public class Driver {
 	public static void main(String[] args) {
 		Wheels wheels = new Wheels(
