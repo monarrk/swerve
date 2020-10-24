@@ -1,6 +1,6 @@
 # This was made for BSD make, so it may not be GNU compatible, not sure.
 
-BUILD=.
+BUILD=build
 JAVAC=javac
 JAVA=java
 JAR=jar
@@ -18,11 +18,11 @@ ${GEN}: src/Driver.java
 bach/index.html: ${GEN}
 	bach
 
-run:
-	${JAVA} Driver
+run: ${GEN}
+	./run.sh
 
 fmt:
 	clang-format -i */*.java
 
 clean: 
-	rm -rf **.class **.jar
+	rm -rf **.class **.jar build/ bach/
