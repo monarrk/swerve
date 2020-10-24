@@ -29,6 +29,14 @@ public class Driver {
 			new Vector(1, -1));
 
 		System.out.println(wheels.dump());
+
+		Wheels move = wheels.calculate_move(new Wheels (
+					new Vector(-1, 2),
+					new Vector(1, 2),
+					new Vector(-1, 0),
+					new Vector(1, 0)));
+
+		System.out.println(move.dump());
 	}
 }
 
@@ -60,6 +68,14 @@ class Wheels {
 			+ String.format("\tpos:\n\t\t%s\n", back_left.pos.toString())
 			+ "back_right:\n"
 			+ String.format("\tpos:\n\t\t%s\n", back_right.pos.toString());
+	}
+
+	/// Return a Vector from the current position to the new position
+	public Wheels calculate_move(Wheels pos) {
+		return new Wheels(front_left.pos.add(pos.front_left.pos),
+			front_right.pos.sub(pos.front_right.pos),
+			back_left.pos.sub(pos.back_left.pos),
+			back_right.pos.sub(pos.back_right.pos));
 	}
 }
 
@@ -126,6 +142,16 @@ class Vector {
 			this.res,
 			this.angle_deg,
 			this.angle_rad);
+	}
+
+	/// Add a vector
+	public Vector add(Vector vec) {
+		return new Vector(this.x + vec.x, this.y + vec.y);
+	}
+
+	/// Subtract a vector
+	public Vector sub(Vector vec) {
+		return new Vector(this.x - vec.x, this.y - vec.y);
 	}
 }
 
